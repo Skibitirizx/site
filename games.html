@@ -13,11 +13,37 @@
             color: red; /* Set text color to red */
         }
 
+        /* Header styling */
         header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
-            padding: 10px;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            color: red;
+            font-size: 24px;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-evenly;
+            width: 60%;
         }
 
         .tab {
@@ -27,40 +53,127 @@
             text-decoration: none;
             border-radius: 5px;
             background-color: #444;
+            transition: background-color 0.3s;
         }
 
         .tab:hover {
             background-color: #555;
         }
 
-        .content {
+        /* Game Cards Section */
+        .game-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+
+        .game-card {
+            background-color: #222;
             padding: 20px;
-            background-color: #222; /* Dark background for content */
+            width: 250px;
+            border-radius: 8px;
+            text-align: center;
+            color: red;
+            margin: 15px;
         }
 
-        h1 {
-            color: red; /* Title text color red */
+        .game-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
         }
 
-        p {
-            color: red; /* Paragraph text color red */
+        .game-card h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: red;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: red;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="home.html" class="tab">Home</a>
-    <a href="settings.html" class="tab">Settings</a>
-    <a href="games.html" class="tab">Games</a>
-    <a href="search.html" class="tab">Search</a>
-</header>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.imgflip.com/6ej3bl.png" alt="Logo" draggable="false">
+            <h1>YoBoiJake</h1>
+        </div>
+        <div class="navbar">
+            <a href="home.html" class="tab">Home</a>
+            <a href="settings.html" class="tab">Settings</a>
+            <a href="games.html" class="tab">Games</a>
+            <a href="search.html" class="tab">Search</a>
+        </div>
+    </header>
 
-<div class="content">
-    <h1>Games Page</h1>
-    <p>This is the Games page content.</p>
-</div>
+    <!-- Games Section -->
+    <section class="game-cards-container">
+        <!-- Game 1 Card -->
+        <div class="game-card">
+            <a href="#" target="_blank">
+                <img src="https://via.placeholder.com/250" alt="Game 1">
+                <h3>Game 1</h3>
+                <p>Game 1 description goes here. Brief details about the game.</p>
+            </a>
+        </div>
+
+        <!-- Game 2 Card -->
+        <div class="game-card">
+            <a href="#" target="_blank">
+                <img src="https://via.placeholder.com/250" alt="Game 2">
+                <h3>Game 2</h3>
+                <p>Game 2 description goes here. Brief details about the game.</p>
+            </a>
+        </div>
+
+        <!-- Game 3 Card -->
+        <div class="game-card">
+            <a href="#" target="_blank">
+                <img src="https://via.placeholder.com/250" alt="Game 3">
+                <h3>Game 3</h3>
+                <p>Game 3 description goes here. Brief details about the game.</p>
+            </a>
+        </div>
+
+        <!-- Game 4 Card -->
+        <div class="game-card">
+            <a href="#" target="_blank">
+                <img src="https://via.placeholder.com/250" alt="Game 4">
+                <h3>Game 4</h3>
+                <p>Game 4 description goes here. Brief details about the game.</p>
+            </a>
+        </div>
+        
+        <!-- Add more game cards as needed -->
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 YoBoiJake Game Hub. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </footer>
 
 </body>
 </html>
-
