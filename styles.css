@@ -1,0 +1,158 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: red;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    margin: 0;
+    color: red;
+    font-size: 24px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.tab {
+    color: red;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #444;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+/* Main Game Section */
+.main-game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: transparent;
+}
+
+.game-container {
+    display: inline-block;
+    border: 5px solid rgba(255, 0, 0, 0.8); /* Transparent red border */
+    padding: 20px;
+    background-color: transparent;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+}
+
+.game-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Fullscreen and Exit Buttons */
+.controls-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#fullscreen-btn, #exit-game-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+}
+
+#fullscreen-btn:hover, #exit-game-btn:hover {
+    background-color: darkred;
+}
+
+/* Games List (Other Games) Section */
+.games-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.game-card {
+    background-color: #222;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
+    color: red;
+    margin: 15px;
+    transition: transform 0.3s ease;
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: red;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: red;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
