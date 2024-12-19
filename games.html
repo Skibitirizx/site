@@ -3,178 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: red;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 15px 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-container img {
-            width: 40px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .logo-container h1 {
-            margin: 0;
-            color: red;
-            font-size: 24px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-evenly;
-            width: 60%;
-        }
-
-        .tab {
-            color: red;
-            padding: 10px 20px;
-            margin: 0 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: #444;
-            transition: background-color 0.3s;
-        }
-
-        .tab:hover {
-            background-color: #555;
-        }
-
-        /* Game Cards Section */
-        .game-cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 50px 0;
-        }
-
-        .game-card {
-            background-color: #222;
-            padding: 20px;
-            width: 250px;
-            border-radius: 8px;
-            text-align: center;
-            color: red;
-            margin: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .game-card img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .game-card h3 {
-            margin-top: 10px;
-            font-size: 20px;
-        }
-
-        .game-card:hover {
-            transform: scale(1.05); /* Slight zoom effect */
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: red;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer a {
-            color: red;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Game container with transparent border */
-        .game-container {
-            display: inline-block;
-            border: 5px solid rgba(255, 0, 0, 0.8); /* Red border with opacity */
-            padding: 20px;
-            background-color: transparent; /* Make the background transparent */
-            position: relative;
-            width: 80%; /* Reduce the width of the game */
-            max-width: 800px;
-            z-index: 5;
-            margin: 0 auto;
-        }
-
-        .game-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Fullscreen and Exit buttons below the game container */
-        .controls-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        #fullscreen-btn, #exit-game-btn {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 16px;
-        }
-
-        #fullscreen-btn:hover, #exit-game-btn:hover {
-            background-color: darkred;
-        }
-
-        /* Adjust background games behind the main game container */
-        .background-games {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: transparent;
-            z-index: 1; /* Behind the main game container */
-        }
-
-    </style>
+    <title>Games | YoBoiJake Game Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <img src="https://i.imgflip.com/6ej3bl.png" alt="Logo" draggable="false">
+            <img src="images/logo.png" alt="Logo" draggable="false">
             <h1>YoBoiJake</h1>
         </div>
         <div class="navbar">
@@ -184,11 +19,9 @@
             <a href="search.html" class="tab">Search</a>
         </div>
     </header>
-
-    <!-- Game Cards Section (Other games) -->
-    <div class="background-games">
-        <h2 style="color: white; text-align: center;">Other Games</h2>
-        <div class="game-cards-container">
+    <main>
+        <h2>Play Our Featured Games</h2>
+        <div class="games-list">
             <div class="game-card">
                 <img src="https://via.placeholder.com/150" alt="Game 1">
                 <h3>Game 1</h3>
@@ -202,50 +35,12 @@
                 <h3>Game 3</h3>
             </div>
         </div>
-    </div>
-
-    <!-- Main Game Section -->
-    <section class="game-container">
-        <h2>Game Title</h2>
-        <p>Game Description</p>
-        <!-- The game iframe or content goes here (you can change it to fit your game) -->
-        <iframe src="https://example.com" width="800" height="600"></iframe>
-
-        <!-- Controls Container for Fullscreen and Exit Buttons -->
-        <div class="controls-container">
-            <button id="fullscreen-btn">Go Fullscreen</button>
-            <button id="exit-game-btn">Exit Game</button>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
+    </main>
     <footer>
         <p>© 2024 YoBoiJake Game Hub. All rights reserved.</p>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
     </footer>
-
-    <script>
-        // Fullscreen functionality
-        document.getElementById('fullscreen-btn').addEventListener('click', function() {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                document.documentElement.webkitRequestFullscreen();
-            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                document.documentElement.msRequestFullscreen();
-            }
-        });
-
-        // Exit game functionality
-        document.getElementById('exit-game-btn').addEventListener('click', function() {
-            // You can implement the logic for exiting the game here. 
-            // For now, it redirects to the home page.
-            window.location.href = 'home.html';
-        });
-    </script>
-
+    <script src="js/scripts.js"></script>
 </body>
 </html>
