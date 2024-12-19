@@ -10,10 +10,9 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: black;
-            color: red; /* Set text color to red */
+            color: red;
         }
 
-        /* Header styling */
         header {
             display: flex;
             justify-content: space-between;
@@ -39,7 +38,6 @@
             font-size: 24px;
         }
 
-        /* Navbar styling */
         .navbar {
             display: flex;
             justify-content: space-evenly;
@@ -89,7 +87,7 @@
             font-size: 20px;
         }
 
-        /* Footer styling */
+        /* Footer */
         footer {
             background-color: #333;
             color: red;
@@ -108,6 +106,23 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Fullscreen button */
+        #fullscreen-btn, #exit-game-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        #fullscreen-btn {
+            right: 100px;
         }
     </style>
 </head>
@@ -129,8 +144,12 @@
 
     <!-- Games Section -->
     <section class="game-cards-container" id="games-container">
-        <!-- Game cards will be inserted here dynamically by JavaScript -->
+        <!-- Game cards will be rendered here -->
     </section>
+
+    <!-- Fullscreen and Exit buttons -->
+    <button id="fullscreen-btn">Go Fullscreen</button>
+    <button id="exit-game-btn">Exit Game</button>
 
     <!-- Footer Section -->
     <footer>
@@ -139,7 +158,6 @@
         <a href="#">Terms of Service</a>
     </footer>
 
-    <!-- JavaScript Section -->
     <script>
         // Define the list of games
         var games = [
@@ -162,36 +180,6 @@
                 url: 'https://educationgg-23704.web.app/games/FBWG4-main/index.html',
                 image: 'https://play-lh.googleusercontent.com/5-YcjiTyMrPJEZe078dHMxnCxcg2A_8NWJZQieRvn2Gkf8JOuHZEbTmFyQ9gn5p2lnU'
             },
-            {
-                id: 'bloxerz',
-                title: 'Bloxerz',
-                url: 'https://www.ehabgames.com/games/bloxors/index.html',
-                image: 'https://th.bing.com/th?id=OIP.6jjUQ7Niv2cl4NvkOrkf_QAAAA&w=255&h=244&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2'
-            },
-            {
-                id: 'driftboss',
-                title: 'Drift Boss',
-                image: 'https://drift-boss.pro/upload/cache/upload/imgs/drift-boss1-m500x500.png',
-                url: 'https://driftbossonline.github.io/file/'
-            },
-            {
-                id: 'breakingthebank',
-                title: 'Henry Stickmin: Breaking the Bank',
-                url: 'https://art-class.github.io/assets/breakingthebank/index.html',
-                image: 'https://play-lh.googleusercontent.com/I9aDLwmiy5iSjeUPs5IDI3lam8iWZ1zVnLF-V_EGvClOLuccjwLNNjZ8xltu4AN60io'
-            },
-            {
-                id: '2048',
-                title: '2048',
-                url: 'https://www.2048.org/',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png'
-            },
-            {
-                id: 'googlesnake',
-                title: 'Google Snake',
-                url: 'https://www.google.com/fbx?fbx=snake_arcade',
-                image: 'https://th.bing.com/th/id/OIP.-Bdzvy87SmMmkN8X8si0mAHaFR?w=254&h=180&c=7&r=0&o=5&pid=1.7'
-            },
             // Add more games to the list as needed...
         ];
 
@@ -213,7 +201,7 @@
 
                 var gameLink = document.createElement('a');
                 gameLink.href = game.url;
-                gameLink.target = '_blank';
+                gameLink.target = '_self'; // This ensures the game opens in the same tab
 
                 gameLink.appendChild(gameImage);
                 gameLink.appendChild(gameTitle);
@@ -225,6 +213,27 @@
 
         // Call the render function on page load
         window.onload = renderGames;
+
+        // Fullscreen functionality
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        });
+
+        // Exit game functionality
+        document.getElementById('exit-game-btn').addEventListener('click', function() {
+            // You can implement the logic for exiting the game here. 
+            // For now, it redirects to the home page.
+            window.location.href = 'home.html';
+        });
     </script>
+
 </body>
 </html>
