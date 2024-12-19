@@ -10,6 +10,8 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: black; /* Set background to black */
+            color: red; /* Set text color to red */
         }
 
         /* Styling for the header section */
@@ -22,7 +24,7 @@
 
         /* Style for each tab */
         .tab {
-            color: white;
+            color: red;
             padding: 10px 20px;
             margin: 0 10px;
             text-decoration: none;
@@ -39,20 +41,23 @@
         /* Page content area */
         .content {
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #222; /* Dark background for content */
             height: calc(100vh - 50px); /* Full height minus the header */
         }
 
         /* Title inside the content */
         .content h1 {
-            color: #333;
+            color: red; /* Title text color red */
+        }
+
+        p {
+            color: red; /* Paragraph text color red */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Tabs that navigate to different pages -->
         <a href="home.html" class="tab">Home</a>
         <a href="settings.html" class="tab">Settings</a>
         <a href="games.html" class="tab">Games</a>
