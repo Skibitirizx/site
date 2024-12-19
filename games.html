@@ -108,21 +108,32 @@
             text-decoration: underline;
         }
 
-        /* Fullscreen button */
+        /* Game container with border */
+        .game-container {
+            display: inline-block;
+            border: 2px solid red;
+            padding: 20px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        /* Fullscreen and Exit buttons below the game container */
+        .controls-container {
+            margin-top: 20px;
+        }
+
         #fullscreen-btn, #exit-game-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
             background-color: red;
             color: white;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            z-index: 9999;
+            margin: 10px;
+            font-size: 16px;
         }
 
-        #fullscreen-btn {
-            right: 100px;
+        #fullscreen-btn:hover, #exit-game-btn:hover {
+            background-color: darkred;
         }
     </style>
 </head>
@@ -142,14 +153,19 @@
         </div>
     </header>
 
-    <!-- Games Section -->
-    <section class="game-cards-container" id="games-container">
-        <!-- Game cards will be rendered here -->
-    </section>
+    <!-- Game Section with Border -->
+    <section class="game-container">
+        <h2>Game Title</h2>
+        <p>Game Description</p>
+        <!-- The game iframe or content goes here (you can change it to fit your game) -->
+        <iframe src="https://example.com" width="800" height="600"></iframe>
 
-    <!-- Fullscreen and Exit buttons -->
-    <button id="fullscreen-btn">Go Fullscreen</button>
-    <button id="exit-game-btn">Exit Game</button>
+        <!-- Controls Container for Fullscreen and Exit Buttons -->
+        <div class="controls-container">
+            <button id="fullscreen-btn">Go Fullscreen</button>
+            <button id="exit-game-btn">Exit Game</button>
+        </div>
+    </section>
 
     <!-- Footer Section -->
     <footer>
@@ -159,68 +175,13 @@
     </footer>
 
     <script>
-        // Define the list of games
-        var games = [
-            {
-                id: 'customgame',
-                title: 'Add custom game',
-                image: 'assets/images/add.png'
-            },
-            {
-                id: 'cookieclicker',
-                title: 'Cookie Clicker',
-                description: 'Cookie Clicker is an addictive incremental game where players click to produce cookies, unlock upgrades, and aim to amass an ever-growing mountain of delicious digital treats.',
-                url: 'https://sushi8756.github.io/Cookie-Clicker-2.031/',
-                image: 'https://cdn.discordapp.com/icons/339131488111034389/73f15cd93d96504af9877a53816d110c.png'
-            },
-            {
-                id: 'fbwg',
-                title: 'Fireboy and Watergirl',
-                description: 'A 2 player game where you have to work together using logic and teamwork to get to the finish line.',
-                url: 'https://educationgg-23704.web.app/games/FBWG4-main/index.html',
-                image: 'https://play-lh.googleusercontent.com/5-YcjiTyMrPJEZe078dHMxnCxcg2A_8NWJZQieRvn2Gkf8JOuHZEbTmFyQ9gn5p2lnU'
-            },
-            // Add more games to the list as needed...
-        ];
-
-        // Function to render the games on the page
-        function renderGames() {
-            var container = document.getElementById('games-container');
-            container.innerHTML = ''; // Clear previous content
-
-            games.forEach(game => {
-                var gameElement = document.createElement('div');
-                gameElement.classList.add('game-card');
-
-                var gameTitle = document.createElement('h3');
-                gameTitle.textContent = game.title;
-
-                var gameImage = document.createElement('img');
-                gameImage.src = game.image;
-                gameImage.alt = game.title;
-
-                var gameLink = document.createElement('a');
-                gameLink.href = game.url;
-                gameLink.target = '_self'; // This ensures the game opens in the same tab
-
-                gameLink.appendChild(gameImage);
-                gameLink.appendChild(gameTitle);
-
-                gameElement.appendChild(gameLink);
-                container.appendChild(gameElement);
-            });
-        }
-
-        // Call the render function on page load
-        window.onload = renderGames;
-
         // Fullscreen functionality
         document.getElementById('fullscreen-btn').addEventListener('click', function() {
             if (document.documentElement.requestFullscreen) {
                 document.documentElement.requestFullscreen();
             } else if (document.documentElement.mozRequestFullScreen) { // Firefox
                 document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
                 document.documentElement.webkitRequestFullscreen();
             } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
                 document.documentElement.msRequestFullscreen();
@@ -237,3 +198,4 @@
 
 </body>
 </html>
+
