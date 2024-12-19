@@ -11,6 +11,8 @@
             font-family: Arial, sans-serif;
             background-color: black;
             color: red;
+            position: relative;
+            overflow-x: hidden;
         }
 
         header {
@@ -19,6 +21,8 @@
             align-items: center;
             background-color: #333;
             padding: 15px 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .logo-container {
@@ -74,6 +78,7 @@
             text-align: center;
             color: red;
             margin: 15px;
+            transition: transform 0.3s ease;
         }
 
         .game-card img {
@@ -85,6 +90,10 @@
         .game-card h3 {
             margin-top: 10px;
             font-size: 20px;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05); /* Slight zoom effect */
         }
 
         /* Footer */
@@ -108,18 +117,29 @@
             text-decoration: underline;
         }
 
-        /* Game container with border */
+        /* Game container with transparent border */
         .game-container {
             display: inline-block;
-            border: 2px solid red;
+            border: 5px solid rgba(255, 0, 0, 0.8); /* Red border with opacity */
             padding: 20px;
-            margin: 50px auto;
-            text-align: center;
+            background-color: transparent; /* Make the background transparent */
+            position: relative;
+            width: 80%; /* Reduce the width of the game */
+            max-width: 800px;
+            z-index: 5;
+            margin: 0 auto;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Fullscreen and Exit buttons below the game container */
         .controls-container {
             margin-top: 20px;
+            text-align: center;
         }
 
         #fullscreen-btn, #exit-game-btn {
@@ -135,6 +155,18 @@
         #fullscreen-btn:hover, #exit-game-btn:hover {
             background-color: darkred;
         }
+
+        /* Adjust background games behind the main game container */
+        .background-games {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+            z-index: 1; /* Behind the main game container */
+        }
+
     </style>
 </head>
 <body>
@@ -153,7 +185,26 @@
         </div>
     </header>
 
-    <!-- Game Section with Border -->
+    <!-- Game Cards Section (Other games) -->
+    <div class="background-games">
+        <h2 style="color: white; text-align: center;">Other Games</h2>
+        <div class="game-cards-container">
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150" alt="Game 1">
+                <h3>Game 1</h3>
+            </div>
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150" alt="Game 2">
+                <h3>Game 2</h3>
+            </div>
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150" alt="Game 3">
+                <h3>Game 3</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Section -->
     <section class="game-container">
         <h2>Game Title</h2>
         <p>Game Description</p>
@@ -198,4 +249,3 @@
 
 </body>
 </html>
-
