@@ -3,63 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: black; /* Set background to black */
-            color: red; /* Set text color to red */
-        }
-
-        header {
-            display: flex;
-            justify-content: flex-end;
-            background-color: #333;
-            padding: 10px;
-        }
-
-        .tab {
-            color: red;
-            padding: 10px 20px;
-            margin: 0 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: #444;
-        }
-
-        .tab:hover {
-            background-color: #555;
-        }
-
-        .content {
-            padding: 20px;
-            background-color: #222; /* Dark background for content */
-        }
-
-        h1 {
-            color: red; /* Title text color red */
-        }
-
-        p {
-            color: red; /* Paragraph text color red */
-        }
-    </style>
+    <title>Search | YoBoiJake Game Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<header>
-    <a href="home.html" class="tab">Home</a>
-    <a href="settings.html" class="tab">Settings</a>
-    <a href="games.html" class="tab">Games</a>
-    <a href="search.html" class="tab">Search</a>
-</header>
-
-<div class="content">
-    <h1>Search Page</h1>
-    <p>This is the Search page content.</p>
-</div>
-
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" draggable="false">
+            <h1>YoBoiJake</h1>
+        </div>
+        <div class="navbar">
+            <a href="home.html" class="tab">Home</a>
+            <a href="settings.html" class="tab">Settings</a>
+            <a href="games.html" class="tab">Games</a>
+            <a href="search.html" class="tab">Search</a>
+        </div>
+    </header>
+    <main>
+        <h2>Search for Games</h2>
+        <input type="text" id="search-input" placeholder="Search games...">
+        <button id="search-btn">Search</button>
+        <div class="search-results">
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150" alt="Game 1">
+                <h3>Search Result 1</h3>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 YoBoiJake Game Hub. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </footer>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
+
